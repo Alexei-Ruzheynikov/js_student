@@ -1,3 +1,90 @@
+"use strict";
+
+//вызывает модальное окно ок или закрыть
+// confirm();
+//выведет true в консоль если нажать ок и false если отмена
+// console.log(confirm("Тебе есть 18 лет?"));
+
+// confirm можно задать в переменную и посмотреть переменную
+// let question = confirm("Тебе есть 18 лет?");
+//prompt - появляется модальное окно с текстом и инпутом, и то что введут, будет значением переменной, все значения от пользователя будут типа - строка
+// второй параметр prompt - значение, которое будет по умолчанию
+// при нажатии отмена в prompt - вернет значение null
+// let question2 = prompt("Сколько тебе лет?");
+// +prompt - тип данных будет число, но если будет слово, то вернет NaN в этом случае
+// let question2 = +prompt("Сколько тебе лет?");
+
+// console.log(typeof question2);
+/*
+console.log(5 + "5"); // тип даных приведет - к строке
+console.log(typeof (5 + "5"));
+// тип данных приведет - числу
+console.log(typeof (5 - "5"));
+console.log(typeof (5 - "5"));
+console.log(typeof (5 / "5"));
+// если тип данных нельзя преобразовать - получим ошибку вычисления - NaN
+console.log("js" / "5");
+
+//преобразование типов с помощью оператора сравнения
+console.log(5 == "5");
+console.log(Boolean(5)); // явное преобразование в булеан тип
+console.log(!!5); //true - тоже преобразование в булеан тип
+
+console.log(typeof String(10)); // конструктор преобразования данных в тип строка
+console.log(typeof (10 + "")); // сложить с пустой строкой - преобразование в строку
+// toString - метод, работающий с числами и булиновыми значениями - приведет к типу данных строка, нужно ставить пробел чтобы работало иои использовать 2 точки
+console.log(typeof (10).toString());
+
+//чтобы преобразовать значение в число
+console.log(typeof Number("33"));
+console.log(typeof +"10"); // тернарный оператор + преобразует в число
+*/
+/*
+//умножение на 1 приведет к типу данных число
+let n = "10";
+n *= 1;
+console.log(typeof n);
+// parseInt - выведет число пока оно есть, parseFloat - выведет с точкой / до букв
+// parseInt вторым параметром можно указать двоичную систему
+console.log(parseInt("10 px"));
+console.log(parseFloat("10.5 px"));
+*/
+/*Если (жарко) {
+    одеваем шорты;
+    одеваем футболку;
+} иначе {
+    одеваем джинсы;
+    одеваем кофту;
+}
+*/
+/*
+let n = 3;
+if (n === 5) {
+  console.log("команда 1");
+} else if (n === 4) {
+  console.log("команда 2");
+} else {
+  console.log("команда 3");
+}
+// switch - всегда проверяет на строгое соответствие
+switch (n) {
+  //группировка case
+  case 3:
+  case 4:
+  case 5:
+    console.log("3 - 5");
+    break;
+  case 6:
+    console.log(6);
+    break;
+  default:
+    console.log("не верно");
+}
+
+let result = n === 4 ? "верно" : "не верно";
+console.log("result:", result);
+*/
+/*
 let money = 50000;
 let income = "Фриланс";
 let addExpenses = "Интернет, Оборудование, Обучение";
@@ -15,7 +102,7 @@ console.log(addExpenses.toLowerCase());
 console.log(addExpenses.split(", "));
 
 let budgetDay = money / 30;
-console.log(budgetDay);
+console.log(budgetDay); */
 
 /*let myVar;
 
