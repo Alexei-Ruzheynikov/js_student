@@ -42,7 +42,7 @@ let budgetMonth = money - amount1 - amount2;
 console.log("Бюджет на месяц: " + budgetMonth);
 let missionAchieved = mission / budgetMonth;
 console.log(
-  "Цель будет достигнута за " + Math.ceil(missionAchieved) + " месяцев"
+  "Цель будет достигнута за " + Math.ceil(missionAchieved) + " месяцев(-a)"
 );
 budgetDay = budgetMonth / 30;
 console.log("Бюджет на день: " + budgetDay);
