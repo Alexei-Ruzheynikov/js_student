@@ -1,5 +1,141 @@
 "use strict";
 
+// lection04//
+// Такую функцию можно вызывать до и после ее объявления
+// function outputMessage() {
+//   console.log("Hello world");
+// }
+// // вызываем функцию - круглые скобки обязательные
+// outputMessage();
+//2 способ вызова функции через переменную, такую функцию можно вызвать только после ее объявления
+// const consoleMessage = function () {
+//   console.log("Hello, friend!");
+// };
+// consoleMessage();
+// //3 способ с помощью конструктора - очень редко используется
+// const alertMessage = new Function('alert("Hi!")');
+// alertMessage();
+//негласное правило функций - 1 функция - 1 действие
+// параметры функций
+// function outputMessage(name, age) {
+//   console.log("Hello " + name);
+//   console.log("My age: " + age);
+// }
+// outputMessage("Max", 30);
+//переменные в функции нельзя использовать внешне, поэтому их нужно объявлять вне функции
+// let res = 0;
+// const sum = function (a, b) {
+//   res = a + b;
+//   console.log(a + b);
+// };
+// // переменная res примет значения, только после вызова функции
+// console.log(res);
+// sum(3, 5);
+// console.log(res);
+// const sum = function (a, b) {
+//   return a + b;
+// };
+// let res = sum(3, 5);
+// console.log("res: ", res);
+
+// const sum = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// let res = sum(3, 5, 4, 4, 4, 3, 6);
+// console.log("res: ", res);
+
+//функции дз №3
+// let showTypeOf = function (data) {
+//   console.log(typeof data);
+// };
+// showTypeOf(money);
+// showTypeOf(income);
+// showTypeOf(deposit);
+// //функция дз №3. Чистая функция не должна ничего выводить в консоль
+// // вместо console.log написать return
+// let getStatusIncome = function () {
+//   //здесь цикл дневного дохода
+// };
+// // при вызове функции оборачиваем ее в console.log
+// console.log(getStatusIncome());
+
+//Продолжение лекции- чистые, анонимные и callback функции
+//Если после function - есть имя - то это именованная функция, в остальных случаях - она анонимна
+// const sum = function (a, b) {
+//   return a + b;
+// };
+//анонимная онструкция - с конструктором
+// const sum2 = new Function("a", "b", "return a + b");
+// console.log(sum);
+// console.log(sum2);
+//если после function есть имя, то функция именованная
+// const sum3 = function sum3(a, b) {
+//   return a + b;
+// };
+// console.log(sum3);
+//анонимная функция хранится в памяти переменной, анонимная функция присваивается по ссылке в переменную
+
+//анонимная функця может вызывать сама себя-для этого ее записывают в скобках и скобки в конце для вызова самой функции
+// (function () {
+//   console.log("Hello");
+// })();
+// callback функции - когда функции могут вызываться внутри функций(Еще называется - функция обратного вызова)
+//Пример №1
+// const doNum = function (a, b, callback) {
+//   if (typeof a === "number" && typeof b === "number") {
+//     callback(a, b);
+//   }
+// };
+// doNum(5, 10, function (a, b) {
+//   console.log(a + b);
+// });
+// function mult(a, b) {
+//   console.log(a * b);
+// }
+// doNum(3, 5, mult);
+// function one(callback) {
+//   console.log("Делаем запрос на сервер");
+//   setTimeout(function () {
+//     console.log("Получаем данные от сервера");
+//     callback();
+//   }, 200);
+// }
+// function two() {
+//   console.log("Выводим на страницу");
+// }
+// one(two);
+
+//Детерминированные функции - зависят только от входных данных
+// function foo(a, b) {
+//   const sum = a + b;
+//   return sum;
+// }
+// console.log(foo(2, 3));
+// console.log(foo(2, 3));
+// console.log(foo(2, 3));
+//Эта функция перестает быть чистой, т.к меняет значение x, а значит имеет побочный эффект
+// let x = 5;
+// console.log("x: ", x);
+// function foo(a, b) {
+//   const sum = a + b;
+//   x += sum;
+//   return sum;
+// }
+// console.log(foo(2, 3));
+// console.log("x: ", x);
+//Эта функция не чистая т.к использует внешнюю переменную
+let x = 5;
+function foo(a) {
+  const sum = a + x;
+  return sum;
+}
+console.log(foo(2));
+
+//чистая функция должна быть детерменированная - тоесть зависеть только от входных данных и не должна иметь побочных эффектов, тоесть не должна изменять входные данные и не изменять все что вне функции
+//чистая функция похожа на математическую, например квадрат числа вернет всегда одно и то же число
+
+//конец 4 лекции
 //вызывает модальное окно ок или закрыть
 // confirm();
 //выведет true в консоль если нажать ок и false если отмена
