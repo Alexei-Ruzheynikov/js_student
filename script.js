@@ -24,7 +24,9 @@ let expenses = [];
 
 // Домашнее задание #5
 let start = function () {
-  money = prompt("Ваш месячный доход?");
+  do {
+    money = prompt("Ваш месячный доход?");
+  } while (!isNumber(money));
   // while (isNaN(money) || money.trim() === "" || money === null) {
   //   money = prompt("Ваш месячный доход?");
   // }
@@ -32,9 +34,6 @@ let start = function () {
   // while (isNaN(parseFloat(money)) {
   //   money = prompt("Ваш месячный доход?");
   // }
-  while (!isNumber(money)) {
-    money = prompt("Ваш месячный доход?");
-  }
 };
 start();
 
@@ -54,7 +53,6 @@ let getExpensesMonth = function () {
     //   expenses2 = prompt("Введите обязательную статью расходов");
     // }
     expenses[i] = prompt("Введите обязательную статью расходов");
-
     sum += +prompt("Во сколько это обойдётся?");
   }
   console.log(expenses);
@@ -75,8 +73,11 @@ let accumulatedMonth = function getAccumulatedMonth() {
 let getTargetMonth = function () {
   return mission / accumulatedMonth();
 };
-console.log("Сроки достижения цели в месяцах ", getTargetMonth());
-
+if (accumulatedMonth() >= 0) {
+  console.log("Сроки достижения цели в месяцах ", getTargetMonth());
+} else if (accumulatedMonth() < 0) {
+  console.log("Цель не будет достигнута ");
+}
 budgetDay = function () {
   return accumulatedMonth() / 30;
 };
