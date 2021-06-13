@@ -48,7 +48,7 @@ console.log(addExpenses.toLowerCase().split(","));
 let accumulatedMonth = function getAccumulatedMonth() {
   return money - getExpensesMonth();
 };
-// console.log("Накопления за месяц: ", accumulatedMonth());
+// console.log("Накопления за месяц: ", accumulatedMonth);
 
 let getTargetMonth = function () {
   return mission / accumulatedMonth();
