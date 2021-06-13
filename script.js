@@ -45,20 +45,22 @@ console.log("Расходы за месяц " + getExpensesMonth());
 
 console.log(addExpenses.toLowerCase().split(","));
 
-let accumulatedMonth = function getAccumulatedMonth() {
+function getAccumulatedMonth() {
   return money - getExpensesMonth();
-};
+}
+let accumulatedMonth = getAccumulatedMonth();
+console.log("lol " + accumulatedMonth);
 // console.log("Накопления за месяц: ", accumulatedMonth);
 
 let getTargetMonth = function () {
-  return mission / accumulatedMonth();
+  return mission / accumulatedMonth;
 };
 console.log("Сроки достижения цели в месяцах ", getTargetMonth());
 
 budgetDay = function () {
-  return accumulatedMonth() / 30;
+  return accumulatedMonth / 30;
 };
-console.log("Бюджет на день ", budgetDay());
+console.log("Бюджет на день ", budgetDay);
 
 let getStatusIncome = function () {
   if (budgetDay() >= 1200) {
